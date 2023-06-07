@@ -64,33 +64,33 @@
         ?> -->
     
 
-    <?php foreach($hotels as $key => $hotelsDescriptions) { 
-    ?>
-            <div class="container" style="max-width: 1000px; margin: 20px auto;">
-                
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Hotel</th>
-                            <th scope="col">description</th>
-                            <th scope="col">Parking</th>
-                            <th scope="col">Vote</th>
-                            <th scope="col">Distance from the City Center</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row"> <?= $hotelsDescriptions['name'] ?> </th>
-                            <td><?= $hotelsDescriptions['description'] ?></td>  
-                            <td><?= $hotelsDescriptions['parking'] == 1 ? "YES" : "NO" ?></td> 
-                            <td><?= $hotelsDescriptions['vote'] ?></td> 
-                            <td><?= $hotelsDescriptions['distance_to_center'] ?> km </td>   
-                        </tr>
-                    </tbody>
-                </table> 
-            </div>
-            <?php 
-        }?>
+    
+        <div class="container" style="max-width: 1000px; margin: 20px auto;">
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Hotel</th>
+                        <th scope="col">description</th>
+                        <th scope="col">Parking</th>
+                        <th scope="col">Vote</th>
+                        <th scope="col">Distance from the City Center</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr <?php foreach($hotels as $key => $hotelsDescriptions) { 
+                    ?>>
+                        <th scope="row"> <?= $hotelsDescriptions['name'] ?> </th>
+                        <td><?= $hotelsDescriptions['description'] ?></td>  
+                        <td><?= $hotelsDescriptions['parking'] == 1 ? "YES" : "NO" ?></td> 
+                        <td><?= $hotelsDescriptions['vote'] ?></td> 
+                        <td><?= $hotelsDescriptions['distance_to_center'] ?> km </td>   
+                    </tr>
+                </tbody>
+            </table> 
+        </div>
+        <?php 
+    }?>
 
 </body>
 </html>
