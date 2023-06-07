@@ -61,36 +61,50 @@
                 echo $hotelsItems;
             }
         } */
-        ?> 
-    
+    ?> 
+    <div class="container" style="max-width: 1000px; margin: 20px auto;">
+        <form action="" method="get" class="d-flex align-items-center">
+            <label for="Parking" class="me-3"> Parking: </label>
+            <select class="form-select w-25 me-3" id="Parking" aria-label="Default select example">
+                <option selected>All</option>
+                <option value="1">Yes</option>
+                <option value="2">No</option>
+            </select>
 
-    
-        <div class="container" style="max-width: 1000px; margin: 20px auto;">
-            
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Hotel</th>
-                        <th scope="col">description</th>
-                        <th scope="col">Parking</th>
-                        <th scope="col">Vote</th>
-                        <th scope="col">Distance from the City Center</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach($hotels as $key => $hotelsDescriptions) { 
-                        ?>
-                    <tr>
-                        <th scope="row"> <?= $hotelsDescriptions['name'] ?> </th>
-                        <td><?= $hotelsDescriptions['description'] ?></td>  
-                        <td><?= $hotelsDescriptions['parking'] == 1 ? "YES" : "NO" ?></td> 
-                        <td><?= $hotelsDescriptions['vote'] ?></td> 
-                        <td><?= $hotelsDescriptions['distance_to_center'] ?> km </td>   
-                    </tr>
-                    <?php } ?>
-                </tbody>
-            </table> 
-        </div>
+            <label for="Ranking" class="me-3"> Hotel Ranking: </label>
+            <select class="form-select w-25" id="Ranking" aria-label="Default select example">
+                <option selected>All</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </form>
+        <table class="table mt-4" style="border: 1px solid lightgrey;">
+            <thead>
+                <tr>
+                    <th scope="col">Hotel</th>
+                    <th scope="col">description</th>
+                    <th scope="col">Parking</th>
+                    <th scope="col">Vote</th>
+                    <th scope="col">Distance from the City Center</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($hotels as $key => $hotelsDescriptions) { 
+                    ?>
+                <tr>
+                    <th scope="row"> <?= $hotelsDescriptions['name'] ?> </th>
+                    <td><?= $hotelsDescriptions['description'] ?></td>  
+                    <td><?= $hotelsDescriptions['parking'] == 1 ? "YES" : "NO" ?></td> 
+                    <td><?= $hotelsDescriptions['vote'] ?></td> 
+                    <td><?= $hotelsDescriptions['distance_to_center'] ?> km </td>   
+                </tr>
+                <?php } ?>
+            </tbody>
+        </table> 
+    </div>
 
 </body>
 </html>
