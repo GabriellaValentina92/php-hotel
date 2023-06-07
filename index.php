@@ -56,12 +56,12 @@
 		defer></script>
 </head>
 <body>
-    <!-- <?php foreach($hotels as $key => $hotelsDescriptions) {
+    <?php /* foreach($hotels as $key => $hotelsDescriptions) {
             foreach($hotelsDescriptions as $key => $hotelsItems){ 
                 echo $hotelsItems;
             }
-        }
-        ?> -->
+        } */
+        ?> 
     
 
     
@@ -78,19 +78,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr <?php foreach($hotels as $key => $hotelsDescriptions) { 
-                    ?>>
+                    <?php foreach($hotels as $key => $hotelsDescriptions) { 
+                        ?>
+                    <tr>
                         <th scope="row"> <?= $hotelsDescriptions['name'] ?> </th>
                         <td><?= $hotelsDescriptions['description'] ?></td>  
                         <td><?= $hotelsDescriptions['parking'] == 1 ? "YES" : "NO" ?></td> 
                         <td><?= $hotelsDescriptions['vote'] ?></td> 
                         <td><?= $hotelsDescriptions['distance_to_center'] ?> km </td>   
                     </tr>
+                    <?php } ?>
                 </tbody>
             </table> 
         </div>
-        <?php 
-    }?>
 
 </body>
 </html>
