@@ -79,13 +79,14 @@
                     <tr>
                         <th scope="row"> <?= $hotelsDescriptions['name'] ?> </th>
                         <td><?= $hotelsDescriptions['description'] ?></td>  
-                        <td><?= $hotelsDescriptions['parking'] ?></td> 
+                        <td><?= $hotelsDescriptions['parking'] == 1 ? "YES" : "NO" ?></td> 
                         <td><?= $hotelsDescriptions['vote'] ?></td> 
                         <td><?= $hotelsDescriptions['distance_to_center'] ?></td>   
                     </tr>
                 </tbody>
             </table> <?php
             
-        } ?>
+        }?>
+
 </body>
 </html>
