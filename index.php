@@ -64,7 +64,8 @@
         ?> -->
     
 
-    <?php foreach($hotels as $key => $hotelsDescriptions) { ?>
+    <?php foreach($hotels as $hotelsDescriptions) { 
+    ?>
             <table class="table">
                 <thead>
                     <tr>
