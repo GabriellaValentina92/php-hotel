@@ -84,7 +84,7 @@
                             <td><?= $hotelsDescriptions['description'] ?></td>  
                             <td><?= $hotelsDescriptions['parking'] == 1 ? "YES" : "NO" ?></td> 
                             <td><?= $hotelsDescriptions['vote'] ?></td> 
-                            <td><?= $hotelsDescriptions['distance_to_center'] ?></td>   
+                            <td><?= $hotelsDescriptions['distance_to_center'] ?> km </td>   
                         </tr>
                     </tbody>
                 </table> 
